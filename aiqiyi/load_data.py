@@ -3,8 +3,8 @@ import pandas as pd
 
 def load_data():
     train_data = {}
-    file_path = 'F:/Projects/deep_learning/DeepFM/data/tiny_train_input.csv'
-    data = pd.read_csv(file_path, header=None)
+    file_path = './data/wsdm_model_data/train_data.txt'
+    data = pd.read_csv(file_path)
     data.columns = ['c' + str(i) for i in range(data.shape[1])]
     label = data.c0.values
     label = label.reshape(len(label), 1)
